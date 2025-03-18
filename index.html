@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Dəstək Xidməti</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ümumi stildə header və düymənin mərkəzləşdirilməsi */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 30px; /* Yuxarıda boşluq əlavə edirik */
+        }
+
+        /* Xidmətlərimiz düyməsinin stili */
+        .service-button {
+            margin-top: 20px; /* Logodan aşağıda boşluq */
+            background-color: #4CAF50;  /* Yaşıl rəng */
+            color: white;
+            padding: 20px 40px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Əlavə kölgə effekti */
+        }
+
+        /* Hover effekti */
+        .service-button:hover {
+            background-color: #45a049;
+            transform: scale(1.1); /* Düymənin hover effekti zamanı böyüməsi */
+        }
+
+        /* Tooltip stili - Xidmətlərimiz düyməsinin üzərinə gələndə göstəriləcək yazı */
+        .service-button:hover::after {
+            content: "Xidmətlərimiz səhifəsində, sizə lazım olan IT dəstək xidmətlərini seçə bilərsiniz.";
+            position: absolute;
+            top: -40px; /* Yuxarıya doğru yerləşdirilir */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            z-index: 9999;
+        }
+
+        /* AnyDesk bölməsi - Kompyuterinizin programsal dəstəyə ehtiyacı varsa göstəriləcək */
+        #anydesk-section {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .anydesk-logo {
+            max-width: 150px;
+            margin: 10px 0;
+        }
+
+        .download-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Bildiriş stili */
+        .notification {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            max-width: 300px;  /* Maksimum genişlik */
+            font-size: 14px;    /* Font ölçüsü kiçildildi */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        /* Telefon nömrəsi və Email forması */
+        .phone-input-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .phone-code {
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        .phone-input {
+            padding: 5px;
+            width: 200px; /* Formun uzunluğunu kiçiltmək */
+        }
+
+        .phone-label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .send-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="IT Dəstək Xidməti" class="logo">
+        <h1 class="main-title">IT Dəstək Xidməti</h1>
+        <!-- Xidmətlərimiz düyməsi burada logonun və başlığın altında mərkəzləşdirilir -->
+        <button class="service-button" onclick="window.location.href='xidmetlerimiz.html'">Xidmətlərimiz</button>
+    </header>
+
+    <div class="container">
+        <p class="service-question">Kompyuterinizlə bağlı hansı xidmətə ehtiyacınız var?</p>
+
+        <form id="supportForm">
+            <div class="radio-buttons">
+                <label>
+                    <input type="radio" name="supportOption" value="Kompyuterimin programsal dəstəyə ehtiyacı var !" id="software" onclick="toggleAnyDesk()"> Kompyuterimin programsal dəstəyə ehtiyacı var !
+                </label>
+                <label>
+                    <input type="radio" name="supportOption" value="Kompyuterim fiziki nasazdır!" id="hardware" onclick="toggleAnyDesk()"> Kompyuterim fiziki nasazdır!
+                </label>
+                <label>
+                    <input type="radio" name="supportOption" value="Kompyuterimi yeni almışam!" id="newComputer" onclick="toggleAnyDesk()"> Kompyuterimi yeni almışam!
+                </label>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="showForm()">Seçimi Et</button>
+        </form>
+
+        <div id="phoneForm" style="display:none;">
+            <label for="phoneNumber" class="phone-label">Telefon nömrənizi qeyd edin:</label>
+            <div class="phone-input-container">
+                <select id="countryCode" class="country-code">
+                    <option value="+994">+994</option>
+                </select>
+                <input type="text" id="phoneNumber" placeholder="Telefon nömrənizi daxil edin" class="phone-input">
+            </div>
+            <label for="userEmail" class="phone-label">Email (isteğe bağlı):</label>
+            <input type="email" id="userEmail" placeholder="Email ünvanınızı daxil edin" class="phone-input">
+            <button onclick="sendMessage()" class="send-btn">Göndər</button>
+        </div>
+
+        <!-- Bildiriş -->
+        <div id="notification" class="notification" style="display: none;">
+            İstədiyiniz qeydə alınmışdır, ən qısa müddətdə sizinlə əlaqə saxlanılacaq.
+        </div>
+
+        <!-- AnyDesk bölməsi - Kompyuterinizin programsal dəstəyə ehtiyacı varsa göstəriləcək -->
+        <div id="anydesk-section">
+            <h2>Kompyuterinizin programsal dəstəyə ehtiyacı varsa, lütfən, AnyDesk proqramını yükləyin.</h2>
+            <img src="images/anydesk.png" alt="AnyDesk Logo" class="anydesk-logo">
+            <a href="downloads/AnyDesk.exe" download>
+                <button class="download-btn">AnyDesk Setup-ını Yükləyin</button>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 IT Dəstək Xidməti - Bütün hüquqlar qorunur</p>
+        <p>Əlaqə: <a href="tel:+994559563119">+994559563119</a> | <a href="mailto:support@isio.az">support@isio.az</a></p>
+    </footer>
+
+    <script>
+        function toggleAnyDesk() {
+            var selectedOption = document.querySelector('input[name="supportOption"]:checked').value;
+            var anyDeskSection = document.getElementById('anydesk-section');
+            // AnyDesk bölməsini yalnız "Kompyuterinizin programsal dəstəyə ehtiyacı varsa" seçildikdə göstər
+            if (selectedOption === 'Kompyuterimin programsal dəstəyə ehtiyacı var !') {
+                anyDeskSection.style.display = 'block';
+            } else {
+                anyDeskSection.style.display = 'none';
+            }
+        }
+
+        function showForm() {
+            var selectedOption = document.querySelector('input[name="supportOption"]:checked');
+            if (!selectedOption) {
+                alert("Bir seçim edin!");
+                return;
+            }
+
+            document.getElementById('phoneForm').style.display = 'block';
+        }
+
+        function sendMessage() {
+            var phone = document.getElementById('phoneNumber').value;
+            var email = document.getElementById('userEmail').value;
+            var selection = document.querySelector('input[name="supportOption"]:checked').value;
+
+            if (phone === "") {
+                alert("Telefon nömrəsi mütləqdir!");
+                return;
+            }
+
+            // 'mailto' ilə email göndərilməsi
+            var mailtoLink = "mailto:support@isio.az?subject=IT Dəstək Xidməti Sorğusu&body=Seçim: " + selection + "%0ATelefon nömrəsi: " + phone + "%0AEmail: " + email;
+            window.location.href = mailtoLink; // Bu, e-maili göndərmək üçün e-poçt müştərisini açacaq
+        }
+    </script>
+</body>
+</html>
