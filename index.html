@@ -18,7 +18,7 @@
 
         /* Xidmətlərimiz düyməsinin stili */
         .service-button {
-            margin-top: 20px; /* Logodan aşağıda boşluq */
+            margin-top: 20px;
             background-color: #4CAF50;  /* Yaşıl rəng */
             color: white;
             padding: 20px 40px;
@@ -132,13 +132,42 @@
             cursor: pointer;
             margin-top: 10px;
         }
+
+        /* Radio düymələrinin və formanın görünüşü */
+        .radio-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        .radio-buttons label {
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .radio-buttons input {
+            margin-right: 10px;
+        }
+
+        /* Daha estetik görünüş üçün formun tərtibatı */
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Gözəl keçid effekti */
+        #phoneForm {
+            transition: opacity 0.5s ease;
+        }
+        
     </style>
 </head>
 <body>
     <header>
         <img src="logo.png" alt="IT Dəstək Xidməti" class="logo">
         <h1 class="main-title">IT Dəstək Xidməti</h1>
-        <!-- Xidmətlərimiz düyməsi burada logonun və başlığın altında mərkəzləşdirilir -->
         <button class="service-button" onclick="window.location.href='xidmetlerimiz.html'">Xidmətlərimiz</button>
     </header>
 
@@ -148,7 +177,7 @@
         <form id="supportForm">
             <div class="radio-buttons">
                 <label>
-                    <input type="radio" name="supportOption" value="Kompyuterimin programsal dəstəyə ehtiyacı var !" id="software" onclick="toggleAnyDesk()"> Kompyuterimin programsal dəstəyə ehtiyacı var !
+                    <input type="radio" name="supportOption" value="Kompyuterimin programsal dəstəyə ehtiyacı var !" id="software" onclick="toggleAnyDesk()"> Kompyuterimin programsal dəstəyə ehtiyacı var!
                 </label>
                 <label>
                     <input type="radio" name="supportOption" value="Kompyuterim fiziki nasazdır!" id="hardware" onclick="toggleAnyDesk()"> Kompyuterim fiziki nasazdır!
@@ -158,7 +187,6 @@
                 </label>
             </div>
 
-            <button type="button" class="submit-btn" onclick="showForm()">Seçimi Et</button>
         </form>
 
         <div id="phoneForm" style="display:none;">
@@ -204,15 +232,8 @@
             } else {
                 anyDeskSection.style.display = 'none';
             }
-        }
 
-        function showForm() {
-            var selectedOption = document.querySelector('input[name="supportOption"]:checked');
-            if (!selectedOption) {
-                alert("Bir seçim edin!");
-                return;
-            }
-
+            // Telefon formunu göstərmək
             document.getElementById('phoneForm').style.display = 'block';
         }
 
