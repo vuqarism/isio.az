@@ -5,74 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>isio.az - İ.T. Dəstək</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
         header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
+            background: linear-gradient(90deg, #004aad, #007bff);
             text-align: center;
-        }
-        header img {
-            width: 150px;
-        }
-        main {
             padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        header img {
+            width: 200px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        main {
+            padding: 40px 10%;
+        }
+
         .services, .support {
-            margin-bottom: 30px;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1s ease-in-out;
         }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #004aad;
+            font-weight: 600;
+        }
+
+        ol {
+            list-style: none;
+            counter-reset: item;
+        }
+
+        ol li {
+            counter-increment: item;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        ol li:hover {
+            transform: scale(1.02);
+            background: #eef3ff;
+        }
+
+        ol li::before {
+            content: counter(item) ".";
+            font-weight: bold;
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .support div {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .support button, .support a {
             display: inline-block;
             margin-top: 10px;
-            padding: 10px 15px;
+            padding: 12px 20px;
             background: #007BFF;
             color: #fff;
             text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
             border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, transform 0.2s;
         }
+
         .support button:hover, .support a:hover {
             background: #0056b3;
+            transform: translateY(-3px);
         }
+
         .qr {
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: center;
         }
+
         .qr img {
             width: 150px;
             height: 150px;
+            transition: transform 0.3s ease-in-out;
         }
+
+        .qr img:hover {
+            transform: scale(1.1);
+        }
+
         footer {
             text-align: center;
-            padding: 10px;
-            background: #333;
+            padding: 15px;
+            background: linear-gradient(90deg, #004aad, #007bff);
             color: #fff;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <img src="logo.png" alt="isio.az Logo">
     </header>
+
     <main>
         <section class="services">
             <h2>Xidmətlər</h2>
             <ol>
-                <li>Windows əməliyyat sisteminin qurulması, program təminatı və istifadəçinin istəyinə uyğun proqramların yüklənməsi.</li>
-                <li>Server sistemlərinin qurulması: Windows Server 2008-2022 (AD, DNS, DHCP, File Server).</li>
-                <li>Cisco və HP switch-lərin portlarının konfiqurasiyası.</li>
+                <li>Windows əməliyyat sisteminin qurulması və proqram təminatı.</li>
+                <li>Windows Server (AD, DNS, DHCP, File Server) sistemlərinin qurulması.</li>
+                <li>Cisco və HP switch-lərin port konfiqurasiyası.</li>
                 <li>ESXi 6.0-7.0 virtual maşınların qurulması və idarə edilməsi.</li>
                 <li>Kerio Control-un Linux sistemi üzərində qurulması.</li>
-                <li>VeeamBackup proqramı vasitəsilə kompyuterlərin yedəklənməsi.</li>
+                <li>VeeamBackup vasitəsilə kompyuterlərin yedəklənməsi.</li>
                 <li>VPN tunelin qurulması və icazələrin verilməsi.</li>
                 <li>Modemlərin sazlanması və idarə edilməsi (Tp-Link, UniWifi, Zyxel və s.).</li>
-                <li>Antivirus lisenziyalaşdırmaq və nəzarət etmək.</li>
+                <li>Antivirus lisenziyalaşdırılması və nəzarət edilməsi.</li>
             </ol>
         </section>
+
         <section class="support">
             <h2>Hal-Hazırda nəyə ehtiyacınız var?</h2>
             <div>
@@ -86,14 +174,16 @@
                 <p><strong>Kompyuterimi yeni almışam!</strong></p>
                 <div class="qr">
                     <p>Bizimlə əlaqə saxlayın:</p>
-                    <p>Telefon: +994 55 956 31 19</p>
+                    <p>Telefon: <strong>+994 55 956 31 19</strong></p>
                     <img src="QR.png" alt="Instagram QR Kodu">
                 </div>
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 isio.az. Bütün hüquqlar qorunur.</p>
     </footer>
+
 </body>
 </html>
