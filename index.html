@@ -23,115 +23,101 @@
         header {
             background: #050953;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         header img {
-            width: 250px; /* Logo ölçüsü böyüdüldü */
-            animation: fadeIn 2s ease-in-out;
+            width: 200px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         main {
-            padding: 40px 10%;
+            padding: 30px 8%;
         }
 
         .services, .support {
-            margin-bottom: 50px;
-            padding: 30px;
+            padding: 20px;
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: slideUp 1s ease-in-out;
+            animation: slideUp 0.8s ease-in-out;
+            margin-bottom: 30px;
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 20px;
             color: #004aad;
             font-weight: 600;
+            margin-bottom: 15px;
         }
 
-        ol {
-            list-style: none;
-            counter-reset: item;
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+            list-style: none; /* Nöqtələri sil */
+            padding: 0;
         }
 
-        ol li {
-            counter-increment: item;
-            margin: 15px 0;
-            padding: 15px;
+        .service-list li {
+            flex: 1 1 calc(50% - 10px);
             background: #f8f9fa;
+            padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+            font-size: 14px;
+            transition: transform 0.2s ease-in-out;
         }
 
-        ol li:hover {
+        .service-list li:hover {
             transform: scale(1.02);
             background: #eef3ff;
         }
 
-        ol li::before {
-            content: counter(item) ".";
-            font-weight: bold;
-            color: #007bff;
-            margin-right: 10px;
-        }
-
         .support div {
             text-align: center;
-            margin-top: 20px;
         }
 
-        .support button, .support a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 12px 20px;
+        .support button {
+            padding: 10px 18px;
             background: #007BFF;
             color: #fff;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             border-radius: 5px;
             border: none;
             cursor: pointer;
-            transition: background 0.3s ease-in-out, transform 0.2s;
+            transition: background 0.3s ease-in-out;
         }
 
-        .support button:hover, .support a:hover {
+        .support button:hover {
             background: #0056b3;
-            transform: translateY(-3px);
         }
 
-        .support button img {
-            width: 35px; /* AnyDesk loqosu böyüdüldü */
-            vertical-align: middle;
-            margin-right: 8px;
-        }
-
-        .qr {
-            margin-top: 30px;
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
             text-align: center;
         }
 
         .qr img {
-            width: 180px; /* QR kodun ölçüsü artırıldı */
-            height: 180px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .qr img:hover {
-            transform: scale(1);
+            width: 120px;
+            height: 120px;
         }
 
         footer {
             text-align: center;
-            padding: 15px;
+            padding: 10px;
             background: #050953;
             color: #fff;
-            font-size: 14px;
-            margin-top: 40px;
+            font-size: 13px;
+            margin-top: 20px;
         }
 
         @keyframes fadeIn {
@@ -142,6 +128,18 @@
         @keyframes slideUp {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .service-list {
+                flex-direction: column;
+            }
+            .service-list li {
+                flex: 1 1 100%;
+            }
+            .contact-info {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -154,7 +152,7 @@
     <main>
         <section class="services">
             <h2>Xidmətlər</h2>
-            <ol>
+            <ul class="service-list">
                 <li>Windows əməliyyat sisteminin qurulması və proqram təminatı.</li>
                 <li>Windows Server (AD, DNS, DHCP, File Server) sistemlərinin qurulması.</li>
                 <li>Cisco və HP switch-lərin port konfiqurasiyası.</li>
@@ -162,25 +160,24 @@
                 <li>Kerio Control-un Linux sistemi üzərində qurulması.</li>
                 <li>VeeamBackup vasitəsilə kompyuterlərin yedəklənməsi.</li>
                 <li>VPN tunelin qurulması və icazələrin verilməsi.</li>
-                <li>Modemlərin sazlanması və idarə edilməsi (Tp-Link, UniWifi, Zyxel və s.).</li>
+                <li>Modemlərin sazlanması və idarə edilməsi.</li>
                 <li>Antivirus lisenziyalaşdırılması və nəzarət edilməsi.</li>
-            </ol>
+            </ul>
         </section>
 
         <section class="support">
-            <h2>Hal-Hazırda nəyə ehtiyacınız var?</h2>
+            <h2>Texniki Dəstək</h2>
             <div>
                 <button onclick="window.location.href='AnyDesk.exe';">
-                    <img src="anydesk.png" alt="AnyDesk Logo"> 
-                    Kompyuterimin programsal dəstəyə ehtiyacı var!
+                    AnyDesk ilə qoşulmaq
                 </button>
             </div>
-            <div>
-                <p><strong>Kompyuterim fiziki nasazdır!</strong></p>
-                <p><strong>Kompyuterimi yeni almışam!</strong></p>
+            <div class="contact-info">
+                <div>
+                    <p><strong>Bizimlə əlaqə saxlayın:</strong></p>
+                    <p>📞 <strong>+994 55 956 31 19</strong></p>
+                </div>
                 <div class="qr">
-                    <p>Bizimlə əlaqə saxlayın:</p>
-                    <p>Telefon: <strong>+994 55 956 31 19</strong></p>
                     <img src="QR.png" alt="Instagram QR Kodu">
                 </div>
             </div>
