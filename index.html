@@ -2,7 +2,7 @@
 <html lang="az">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0">
     <title>isio.az - İ.T. Dəstək</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -152,6 +152,41 @@
             max-height: 80vh;
         }
 
+        /* "Xidmət al" Button Style */
+        .service-btn {
+            background-color: #050953;
+            color: #fff;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .service-btn:hover {
+            transform: scale(1.05);
+            background-color: #003366;
+        }
+
+        .program-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .program-list li {
+            margin-bottom: 10px;
+        }
+
+        .program-list li span {
+            font-weight: 600;
+            color: #050953;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -222,6 +257,8 @@
                     <div class="info">Məlumat almaq üçün toxun</div>
                 </li>
             </ul>
+            <!-- Xidmət al düyməsi -->
+            <button class="service-btn" onclick="showProgramList()">Xidmət Al</button>
         </section>
 
         <section class="support">
@@ -244,54 +281,31 @@
             </div>
         </section>
 
-        <!-- Overlay Div -->
+        <!-- Overlay Div for Program List -->
         <div id="overlay" onclick="closeOverlay()">
             <div id="content">
-                <div id="windows-operations-content" style="display: none;">
-                    <h3>Windows əməliyyat sisteminin iş prinsipləri:</h3>
-                    <p>Windows əməliyyat sistemi, istifadəçilərə qrafik istifadəçi interfeysi (GUI) vasitəsilə rahat idarəetmə imkanları təqdim edir. Əməliyyat sistemi həmçinin çoxsaylı tətbiqlərin eyni anda işlədilməsinə imkan verən çoxnüvəli çoxsistemli əməliyyat prinsipləri üzərində qurulub...</p>
-                </div>
-                <div id="windows-server-content" style="display: none;">
-                    <h3>Windows Server (AD, DNS, DHCP, File Server) sistemlərinin qurulması:</h3>
-                    <p>Windows Server, təşkilatlar üçün müxtəlif xidmətlər və resursları idarə etmək üçün istifadə edilən əməliyyat sistemidir. Active Directory (AD) şəbəkə resurslarını mərkəzləşdirilmiş şəkildə idarə edir, DNS (Domain Name System) şəbəkə üzərində resursların tapılmasını təmin edir, DHCP isə IP ünvanlarının avtomatik olaraq verilməsini təmin edir...</p>
-                </div>
-                <div id="switch-configuration-content" style="display: none;">
-                    <h3>Cisco və HP switch-lərin port konfiqurasiyası:</h3>
-                    <p>Cisco və HP switch-lərin port konfiqurasiyası, şəbəkə trafiki və qurğular arasında əlaqələrin düzgün şəkildə qurulmasını təmin edir. Bu xidmət, şəbəkə təhlükəsizliyi və performansını artırmaq məqsədilə vacibdir...</p>
-                </div>
-                <div id="esxi-content" style="display: none;">
-                    <h3>ESXi 6.0-7.0 virtual maşınların qurulması və idarə edilməsi:</h3>
-                    <p>ESXi, VMware tərəfindən təqdim olunan bir hipervizordur və bu sistem virtual maşınların idarə edilməsi üçün istifadə olunur. Bu xidmət, fiziki serverin resurslarından daha səmərəli istifadə etməyə imkan verir...</p>
-                </div>
-                <div id="kerio-content" style="display: none;">
-                    <h3>Kerio Control-un Linux sistemi üzərində qurulması:</h3>
-                    <p>Kerio Control, şəbəkə təhlükəsizliyini təmin edən bir firewall proqramıdır. Linux sistemində bu proqramın qurulması, şəbəkə təhlükəsizliyinin artırılması və internet əlaqələrinin idarə edilməsi üçün vacibdir...</p>
-                </div>
-                <div id="veeam-backup-content" style="display: none;">
-                    <h3>VeeamBackup vasitəsilə kompyuterlərin yedəklənməsi:</h3>
-                    <p>VeeamBackup, məlumatların itirilməməsi üçün təşkilatlarda istifadə edilən bir yedəkləmə həllidir. Bu sistem, kompüterlərin tam və fərdi yedəklənməsi üçün istifadə olunur...</p>
-                </div>
-                <div id="vpn-content" style="display: none;">
-                    <h3>VPN tunelin qurulması və icazələrin verilməsi:</h3>
-                    <p>VPN (Virtual Private Network) tunel qurulması, uzaqdan şəbəkə bağlantılarının təhlükəsizliyini təmin edir. Bu xidmət şəbəkə üzərində məlumatların şifrələnərək ötürülməsini təmin edir...</p>
-                </div>
-                <div id="modem-configuration-content" style="display: none;">
-                    <h3>Modemlərin sazlanması və idarə edilməsi:</h3>
-                    <p>Modemlərin düzgün sazlanması, şəbəkə sürətinin optimallaşdırılması və bağlantıların davamlılığını təmin etmək üçün əhəmiyyətlidir...</p>
-                </div>
-                <div id="antivirus-content" style="display: none;">
-                    <h3>Antivirus lisenziyalaşdırılması və nəzarət edilməsi:</h3>
-                    <p>Antivirus proqramlarının düzgün işləməsi və müntəzəm yenilənməsi, şəbəkə təhlükəsizliyini qorumaq və potensial təhdidlərə qarşı mübarizə aparmaq üçün vacibdir...</p>
-                </div>
+                <h3>Proqramların Siyahısı və Qiymətləri</h3>
+                <ul class="program-list">
+                    <li><span>Windows 7,8,10,11</span> - <span class="price">30azn</span> (Ancaq ofis proqramları daxildir)</li>
+                    <li><span>Windows Server 2016,2019,2022,2025</span> - <span class="price">200azn</span> (Ancaq Domenin yaradılması daxildir)</li>
+                    <li><span>Veam Backup 11</span> - <span class="price">80azn</span></li>
+                    <li><span>Kerio Control</span> - <span class="price">100azn</span></li>
+                    <li><span>ESXi 6.0-7.0</span> - <span class="price">300azn</span></li>
+                    <li><span>Antivirus (Kaspersky) - 1PC</span> - <span class="price">30azn</span></li>
+                    <li><span>Autocad 2022,2024</span> - <span class="price">30azn</span></li>
+                    <li><span>3DS Max</span> - <span class="price">80azn</span> (Features daxildir - Corona, Vray, XSMP, Floor Generator, MultiTextura, Relink Bitmaps, Sweep)</li>
+                    <li><span>Ofis Proqramları 2016,2019,2024</span> - <span class="price">20azn</span> (Word, Excel, Powerpoint, Outlook)</li>
+                </ul>
             </div>
         </div>
+
     </main>
 
     <footer>
         <p>&copy; 2025 isio.az. Bütün hüquqlar qorunur.</p>
     </footer>
 
-    <!--Start of Tawk.to Script-->
+    <!-- Tawk.to Chat Script -->
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
@@ -303,20 +317,14 @@
             s0.parentNode.insertBefore(s1,s0);
         })();
     </script>
-    <!--End of Tawk.to Script-->
 
     <script>
-        function openOverlay(service) {
+        function showProgramList() {
             document.getElementById('overlay').style.display = 'flex';
-            document.getElementById(service + '-content').style.display = 'block';
         }
 
         function closeOverlay() {
             document.getElementById('overlay').style.display = 'none';
-            const contents = document.querySelectorAll('#content > div');
-            contents.forEach(function(content) {
-                content.style.display = 'none';
-            });
         }
     </script>
 
