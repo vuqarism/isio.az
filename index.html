@@ -34,6 +34,7 @@
 
         main {
             padding: 30px 8%;
+            position: relative;
         }
 
         .services, .support {
@@ -152,41 +153,6 @@
             max-height: 80vh;
         }
 
-                /* "Xidmət Qiymətləri" Button Style */
-                .service-btn {
-            background-color: #050953;
-            color: #fff;
-            padding: 15px 30px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 600;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .service-btn:hover {
-            transform: scale(1.05);
-            background-color: #003366;
-        }
-
-        .program-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        .program-list li {
-            margin-bottom: 10px;
-        }
-
-        .program-list li span {
-            font-weight: 600;
-            color: #050953;
-        }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -195,6 +161,32 @@
         @keyframes slideUp {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Button styles */
+        .prices-button {
+            display: block;
+            width: 150px;
+            margin: 20px auto; /* Center the button */
+            padding: 15px;
+            background-color: #050953;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        
+        .prices-button:hover {
+            transform: scale(1.05);
+            background-color: #003366;
+        }
+
+        /* Price styles */
+        .price {
+            color: #050953; /* Price color */
+            font-weight: bold; /* Qalın yazı */
         }
 
         @media (max-width: 600px) {
@@ -257,9 +249,10 @@
                     <div class="info">Məlumat almaq üçün toxun</div>
                 </li>
             </ul>
+            <!-- Price Button under Services section -->
+            <button class="prices-button" onclick="showPrices()">Qiymətlər</button>
         </section>
-        <button class="service-btn" onclick="showProgramList()">Xidmət Al</button>
-    </section>
+
         <section class="support">
             <h2>Texniki Dəstək</h2>
             <div>
@@ -279,23 +272,7 @@
                 </div>
             </div>
         </section>
-        <!-- Overlay Div for Program List -->
-        <div id="overlay" onclick="closeOverlay()">
-            <div id="content">
-                <h3>Proqramların Siyahısı və Qiymətləri</h3>
-                <ul class="program-list">
-                    <li><span>Windows 7,8,10,11</span> - <span class="price">30azn</span> (Ancaq ofis proqramları daxildir)</li>
-                    <li><span>Windows Server 2016,2019,2022,2025</span> - <span class="price">200azn</span> (Ancaq Domenin yaradılması daxildir)</li>
-                    <li><span>Veam Backup 11</span> - <span class="price">80azn</span></li>
-                    <li><span>Kerio Control</span> - <span class="price">100azn</span></li>
-                    <li><span>ESXi 6.0-7.0</span> - <span class="price">300azn</span></li>
-                    <li><span>Antivirus (Kaspersky) - 1PC</span> - <span class="price">30azn</span></li>
-                    <li><span>Autocad 2022,2024</span> - <span class="price">30azn</span></li>
-                    <li><span>3DS Max</span> - <span class="price">80azn</span> (Features daxildir - Corona, Vray, XSMP, Floor Generator, MultiTextura, Relink Bitmaps, Sweep)</li>
-                    <li><span>Ofis Proqramları 2016,2019,2024</span> - <span class="price">20azn</span> (Word, Excel, Powerpoint, Outlook)</li>
-                </ul>
-            </div>
-        </div>
+
         <!-- Overlay Div -->
         <div id="overlay" onclick="closeOverlay()">
             <div id="content">
@@ -335,37 +312,27 @@
                     <h3>Antivirus lisenziyalaşdırılması və nəzarət edilməsi:</h3>
                     <p>Antivirus proqramlarının düzgün işləməsi və müntəzəm yenilənməsi, şəbəkə təhlükəsizliyini qorumaq və potensial təhdidlərə qarşı mübarizə aparmaq üçün vacibdir...</p>
                 </div>
+                <div id="prices-content" style="display: none;">
+                    <h3>Qiymətlər:</h3>
+                    <ul style="list-style-type: none;">
+                        <li><span class="price">Windows 7,8,10,11 - 30</span><strong>azn</strong> (Ancaq ofis programları daxildir)</li>
+                        <li><span class="price">Windows Server 2016,2019,2022,2025 - 200</span><strong>azn</strong> (Ancaq Domenin yaradılması daxildir)</li>
+                        <li><span class="price">Veam Backup 11 - 80</span><strong>azn</strong></li>
+                        <li><span class="price">Kerio Control - 100</span><strong>azn</strong></li>
+                        <li><span class="price">ESXi 6.0-7.0 - 300</span><strong>azn</strong></li>
+                        <li><span class="price">Antivirus (kaspersky) - 1PC - 30</span><strong>azn</strong></li>
+                        <li><span class="price">Autocad 2022,2024 - 30</span><strong>azn</strong></li>
+                        <li><span class="price">3DS Max - 80</span><strong>azn</strong> (Features daxildir - Corona, vray, XSMP, Floor generator, MultiTextura, Relink bitmaps, Sweep)</li>
+                        <li><span class="price">Ofiss programları 2016, 2019, 2024 - 20</span><strong>azn</strong> (Word, Excel, PowerPoint, Outlook)</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 isio.az. Bütün hüquqlar qorunur.</p>
+        <p>© 2025 isio.az. Bütün hüquqlar qorunur.</p>
     </footer>
-
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/67dad59c82b053190b878bca/1imnd4r1h';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-        })();
-    </script>
-
-    <!--End of Tawk.to Script-->
-    <script>
-        function showProgramList() {
-            document.getElementById('overlay').style.display = 'flex';
-        }
-
-        function closeOverlay() {
-            document.getElementById('overlay').style.display = 'none';
-        }
-    </script>
 
     <script>
         function openOverlay(service) {
@@ -379,6 +346,11 @@
             contents.forEach(function(content) {
                 content.style.display = 'none';
             });
+        }
+        
+        function showPrices() {
+            document.getElementById('overlay').style.display = 'flex';
+            document.getElementById('prices-content').style.display = 'block';
         }
     </script>
 
