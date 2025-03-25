@@ -116,6 +116,28 @@
                 flex-direction: column;
             }
         }
+
+        /* New styling for the search result container */
+        .search-results {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .search-result {
+            width: 90%;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -148,8 +170,6 @@
                 <option value="11">11-ci Nəsil</option>
                 <option value="12">12-ci Nəsil</option>
                 <option value="13">13-cü Nəsil</option>
-                <option value="14">14-cü Nəsil</option>
-                <option value="15">15-cü Nəsil</option>
             </select>
             <br><br>
             
@@ -159,7 +179,6 @@
                 <option value="4GB">4GB</option>
                 <option value="8GB">8GB</option>
                 <option value="16GB">16GB</option>
-                <option value="32GB">32GB</option>
             </select>
             <br><br>
             
@@ -169,7 +188,6 @@
                 <option value="120GB">120GB</option>
                 <option value="250GB">250GB</option>
                 <option value="500GB">500GB</option>
-                <option value="1TB">1TB</option>
             </select>
             <br><br>
             
@@ -194,10 +212,8 @@
             <button type="button" onclick="search()">Axtarış et</button>
         </form>
 
-        <!-- Google CSE Axtarış Kodu -->
-        <script async src="https://cse.google.com/cse.js?cx=a79b53cb2b90e4416"></script>
-        <div class="gcse-search"></div>
-
+        <!-- Search Result Container -->
+        <div class="search-results" id="searchResults"></div>
 
         <div class="contact-info">
             <div>
@@ -210,7 +226,7 @@
                     <img src="QR.png" alt="Instagram QR Kodu">
                 </a>
             </div>
-
+        </div>
     </main>
 
     <footer>
@@ -230,9 +246,22 @@
             // Axtarış üçün axtarış termini hazırlayırıq
             const query = `${cpu} ${generation} ${ram} ${ssd} ${hdd} ${gpu}`;
 
-            // Google CSE ilə axtarış edirik
-            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            window.open(searchUrl, "_blank");
+            // Axtarış nəticələrini göstərmək üçün iframe yaradılacaq
+            const searchResults = document.getElementById("searchResults");
+            searchResults.innerHTML = `
+                <div class="search-result">
+                    <h2>Axtarış nəticələri:</h2>
+                    <iframe src="https://www.google.com/search?q=${encodeURIComponent(query)}" title="Google Search Results"></iframe>
+                </div>
+                <div class="search-result">
+                    <h2>Kontakt.az Axtarış nəticələri:</h2>
+                    <iframe src="https://kontakt.az/notbuk-ve-kompyuterler/komputerler/notbuklar?q=${encodeURIComponent(query)}" title="Kontakt.az Search Results"></iframe>
+                </div>
+                <div class="search-result">
+                    <h2>Irshad.az Axtarış nəticələri:</h2>
+                    <iframe src="https://irshad.az/noutbuki-i-kompyutery/noutbuki?q=${encodeURIComponent(query)}" title="Irshad.az Search Results"></iframe>
+                </div>
+            `;
         }
     </script>
 </body>
