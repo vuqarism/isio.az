@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputerler</title>
+    <link rel="icon" href="logo2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #050953;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header img {
+            width: 200px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        main {
+            padding: 30px 8%;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: #004aad;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        select {
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #050953;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .qr img {
+            width: 120px;
+            height: 120px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #050953;
+            color: #fff;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            select {
+                width: 100%;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="isio.az Logo">
+        <p style="text-align: right; margin: 10px;">
+            <a href="index.html" class="btn">🔙 Ana səhifəyə qayıt</a>
+        </p>
+    </header>
+
+    <main>
+        <h1>Komputer Parametrlərini Seçin</h1>
+        
+        <form id="searchForm">
+            <!-- CPU Seçimi -->
+            <label for="cpu">CPU:</label>
+            <select id="cpu">
+                <option value="Intel i3">Intel i3</option>
+                <option value="Intel i5">Intel i5</option>
+                <option value="Intel i7">Intel i7</option>
+                <option value="Intel i9">Intel i9</option>
+            </select>
+            <br><br>
+            
+            <!-- Nəsil Seçimi -->
+            <label for="generation">Nəsil:</label>
+            <select id="generation">
+                <option value="10">10-cu Nəsil</option>
+                <option value="11">11-ci Nəsil</option>
+                <option value="12">12-ci Nəsil</option>
+                <option value="13">13-cü Nəsil</option>
+            </select>
+            <br><br>
+            
+            <!-- RAM Seçimi -->
+            <label for="ram">RAM:</label>
+            <select id="ram">
+                <option value="4GB">4GB</option>
+                <option value="8GB">8GB</option>
+                <option value="16GB">16GB</option>
+            </select>
+            <br><br>
+            
+            <!-- SSD Seçimi -->
+            <label for="ssd">SSD:</label>
+            <select id="ssd">
+                <option value="120GB">120GB</option>
+                <option value="250GB">250GB</option>
+                <option value="500GB">500GB</option>
+            </select>
+            <br><br>
+            
+            <!-- HDD Seçimi -->
+            <label for="hdd">HDD:</label>
+            <select id="hdd">
+                <option value="500GB">500GB</option>
+                <option value="1TB">1TB</option>
+                <option value="2TB">2TB</option>
+            </select>
+            <br><br>
+            
+            <!-- GPU Seçimi -->
+            <label for="gpu">GPU:</label>
+            <select id="gpu">
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="AMD">AMD</option>
+                <option value="Intel">Intel</option>
+            </select>
+            <br><br>
+            
+            <button type="button" onclick="search()">Axtarış et</button>
+        </form>
+
+        <!-- Google CSE Axtarış Kodu -->
+        <script async src="https://cse.google.com/cse.js?cx=a79b53cb2b90e4416"></script>
+        <div class="gcse-search"></div>
+
+        <div class="contact-info">
+            <div>
+                <a href="tel:+994123456789"><i class="fa fa-phone"></i> +994 12 345 67 89</a>
+            </div>
+            <div>
+                <a href="mailto:support@isio.az"><i class="fa fa-envelope"></i> support@isio.az</a>
+            </div>
+            <div class="qr">
+                <img src="qr-code.png" alt="QR Kodu">
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 isio.az - Bütün hüquqlar qorunur</p>
+    </footer>
+
+    <script>
+        function search() {
+            // Formdan verilən parametrləri alırıq
+            const cpu = document.getElementById("cpu").value;
+            const generation = document.getElementById("generation").value;
+            const ram = document.getElementById("ram").value;
+            const ssd = document.getElementById("ssd").value;
+            const hdd = document.getElementById("hdd").value;
+            const gpu = document.getElementById("gpu").value;
+
+            // Axtarış üçün axtarış termini hazırlayırıq
+            const query = `${cpu} ${generation} ${ram} ${ssd} ${hdd} ${gpu}`;
+
+            // Google CSE ilə axtarış edirik
+            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(searchUrl, "_blank");
+        }
+    </script>
+</body>
+</html>
