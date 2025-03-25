@@ -59,39 +59,6 @@
             margin-bottom: 15px;
         }
 
-        .domain-search {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .domain-search input[type="text"] {
-            padding: 10px;
-            width: 60%;
-            margin-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .domain-search button {
-            padding: 10px 20px;
-            background: #050953;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .domain-search button:hover {
-            background: #003366;
-        }
-
-        #domain-result {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
         .service-list {
             display: flex;
             flex-wrap: wrap;
@@ -113,21 +80,22 @@
         }
 
         .service-images {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
-        .service-images img {
-            width: 100px; /* İki dəfə kiçiltmə */
-            height: auto;
-            transition: transform 0.3s ease;
-        }
+.service-images img {
+    width: 100px; /* İki dəfə kiçiltmə */
+    height: auto;
+    transition: transform 0.3s ease;
+}
 
-        .service-images img:hover {
-            transform: scale(1.05); /* Hover effekti əlavə etdim */
-        }
+.service-images img:hover {
+    transform: scale(1.05); /* Hover effekti əlavə etdim */
+}
+
 
         .service-list li:hover {
             transform: scale(1.02);
@@ -172,13 +140,13 @@
         }
 
         .btn {
-            color: red; /* FAQ linkinin rəngi qırmızı olsun */
-            text-decoration: none; /* Alt xətləri silək */
-        }
+    color: red; /* FAQ linkinin rəngi qırmızı olsun */
+    text-decoration: none; /* Alt xətləri silək */
+}
 
-        .btn:hover {
-            color: darkred; /* Hover effekti ilə rəngi bir az tündləşdirək */
-        }
+.btn:hover {
+    color: darkred; /* Hover effekti ilə rəngi bir az tündləşdirək */
+}
 
         .qr img {
             width: 120px;
@@ -228,7 +196,7 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-         /* Button styles */
+        /* Button styles */
         .prices-button {
             display: block;
             width: 150px;
@@ -282,15 +250,6 @@
             <img src="foto2.png" alt="Foto 2" class="service-image">
             <img src="foto3.png" alt="Foto 3" class="service-image">
         </div>
-
-        <!-- Domen axtarışı üçün bölmə -->
-        <div class="domain-search">
-            <h2>Domen Axtarışı</h2>
-            <input type="text" id="domainInput" placeholder="Domen adını daxil edin...">
-            <button onclick="checkDomain()">Yoxla</button>
-            <div id="domain-result"></div>
-        </div>
-
         <section class="services">
             <h2>Xidmətlər</h2>
 
@@ -383,7 +342,7 @@
                 </div>
                 <div id="kerio-content" style="display: none;">
                     <h3>Kerio Control-un Linux sistemi üzərində qurulması:</h3>
-                    <p>Kerio Control, şəbəkə təhlükəsizliyini təmin edən bir firewall proqramıdır. Linux sistemində bu proqramın qurulması, şəbəkə təhlükəsizliyinin artırılması və internet bağlantılarının idarə edilməsi üçün vacibdir...</p>
+                    <p>Kerio Control, şəbəkə təhlükəsizliyini təmin edən bir firewall proqramıdır. Linux sistemində bu proqramın qurulması, şəbəkə təhlükəsizliyinin artırılması və internet əlaqələrinin idarə edilməsi üçün vacibdir...</p>
                 </div>
                 <div id="veeam-backup-content" style="display: none;">
                     <h3>VeeamBackup vasitəsilə kompyuterlərin yedəklənməsi:</h3>
@@ -475,52 +434,18 @@
             document.getElementById('overlay').style.display = 'flex';
             document.getElementById('prices-content').style.display = 'block';
         }
-        
-        async function checkDomain() {
-            const domain = document.getElementById('domainInput').value;
-            const resultDiv = document.getElementById('domain-result');
-
-            if (domain) {
-                const apiKey = 'YOUR_API_KEY'; // API açarınızı buraya daxil edin
-                const apiUrl = `https://api.godaddy.com/v1/domains/available?domain=${domain}`;
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': `sso-key ${apiKey}`,
-                            'Content-Type': 'application/json'
-                        }
-                    });
-
-                    const data = await response.json();
-                    
-                    if (data.available) {
-                        resultDiv.innerHTML = `${domain} - Mövcuddur! 🎉`;
-                    } else {
-                        resultDiv.innerHTML = `${domain} - Zaten alınmış. ❌`;
-                    }
-                } catch (error) {
-                    console.error('Xəta:', error);
-                    resultDiv.innerHTML = 'Xəta baş verdi. Zəhmət olmasa daha sonra yenidən cəhd edin.';
-                }
-            } else {
-                resultDiv.innerHTML = 'Zəhmət olmasa bir domen adı daxil edin.';
-            }
-        }
     </script>
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
-        var s1=document.createElement("script"),
-            s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/67dad59c82b053190b878bca/1imnd4r1h';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67dad59c82b053190b878bca/1imnd4r1h';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
     <!--End of Tawk.to Script-->
