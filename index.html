@@ -316,19 +316,23 @@
                     <p>(Programı endirmək üçün toxun!!)</p>
                 </button>
             </div>
-            <div class="contact-info">
-                <div>
-                    <p><strong>Bizimlə əlaqə saxlayın:</strong></p>
-                    <p>📞 <strong><a href="https://wa.me/994559563119" target="_blank" style="text-decoration: none; color: inherit;">+994 55 956 31 19</a></strong></p>
-                    <p>📧 <strong><a href="mailto:support@isio.az" style="text-decoration: none; color: inherit;">support@isio.az</a></strong></p>
-                </div>
-                <div class="qr">
-                    <a href="https://www.instagram.com/isio.az/" target="_blank">
-                        <img src="QR.png" alt="Instagram QR Kodu">
-                    </a>
-                </div>
-            </div>
-        </section>
+<!-- Əlaqə bölməsi -->
+<div class="contact-info">
+    <div>
+      <p><strong>Bizimlə əlaqə saxlayın:</strong></p>
+      <p>
+        📞 <strong>
+          <a href="#" onclick="chooseContactOption(event)" style="text-decoration: none; color: inherit;">+994 55 956 31 19</a>
+        </strong>
+      </p>
+      <p>📧 <strong><a href="mailto:support@isio.az" style="text-decoration: none; color: inherit;">support@isio.az</a></strong></p>
+    </div>
+    <div class="qr">
+      <a href="https://www.instagram.com/isio.az/" target="_blank">
+        <img src="QR.png" alt="Instagram QR Kodu">
+      </a>
+    </div>
+  </div>
 
         <!-- Overlay Div -->
         <div id="overlay" onclick="closeOverlay()">
@@ -424,6 +428,24 @@
         <p>© 2025 isio.az. Bütün hüquqlar qorunur.</p>
         <p><a href="faq.html" class="btn">FAQ</a></p> <!-- FAQ linki burada -->
     </footer>
+
+    <script>
+        function chooseContactOption(event) {
+          event.preventDefault();
+        
+          // Yalnız mobil cihazlarda işləsin
+          if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+            if (confirm("WhatsApp ilə əlaqə saxlamaq istəyirsiniz? 'İmtina' etsəniz zəngə yönləndiriləcəksiniz.")) {
+              window.location.href = "https://wa.me/994559563119";
+            } else {
+              window.location.href = "tel:+994559563119";
+            }
+          } else {
+            alert("Bu funksionallıq yalnız mobil cihazlarda aktivdir.");
+          }
+        }
+        </script>
+        
 
     <script>
         function openOverlay(service) {
