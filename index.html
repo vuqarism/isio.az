@@ -79,6 +79,24 @@
             cursor: pointer;
         }
 
+        .service-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.service-images img {
+    width: 100px; /* İki dəfə kiçiltmə */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.service-images img:hover {
+    transform: scale(1.05); /* Hover effekti əlavə etdim */
+}
+
+
         .service-list li:hover {
             transform: scale(1.02);
             background: #eef3ff;
@@ -224,8 +242,14 @@
     </header>
 
     <main>
+        <div class="service-images">
+            <img src="foto1.png" alt="Foto 1" class="service-image">
+            <img src="foto2.png" alt="Foto 2" class="service-image">
+            <img src="foto3.png" alt="Foto 3" class="service-image">
+        </div>
         <section class="services">
             <h2>Xidmətlər</h2>
+
             <ul class="service-list">
                 <li onclick="openOverlay('windows-operations')">
                     Windows əməliyyat sisteminin qurulması və proqram təminatı.<br>
@@ -361,7 +385,10 @@
                         Marka dəyəri və etibar qazanırsan.
                         
                         🔐 6. VPN, Server və ya Şəxsi Layihələr üçün
-                        Domeni öz serverinə bağlayaraq VPN, ev avtomatlaşdırması və digər layihələrdə istifadə edə bilərsən.</p>
+                        Domeni öz serverinə bağlayaraq VPN, ev avtomatlaşdırması və digər layihələrdə istifadə edə bilərsən.
+                    </p>
+                    
+                    <p>Domen almaq üçün keçid edin <a href="https://online.az/" target="_blank">buraya klikləyin</a>.</p>
                 </div>
                 <div id="prices-content" style="display: none;">
                     <h3>Qiymətlər:</h3>
