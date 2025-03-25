@@ -9,7 +9,6 @@
     <link rel="icon" href="logo2.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -43,7 +42,7 @@
             position: relative;
         }
 
-        .services, .support {
+        .services, .support, .domain-search {
             padding: 20px;
             background: white;
             border-radius: 8px;
@@ -80,22 +79,21 @@
         }
 
         .service-images {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
 
-.service-images img {
-    width: 100px; /* İki dəfə kiçiltmə */
-    height: auto;
-    transition: transform 0.3s ease;
-}
+        .service-images img {
+            width: 100px; /* İki dəfə kiçiltmə */
+            height: auto;
+            transition: transform 0.3s ease;
+        }
 
-.service-images img:hover {
-    transform: scale(1.05); /* Hover effekti əlavə etdim */
-}
-
+        .service-images img:hover {
+            transform: scale(1.05); /* Hover effekti əlavə etdim */
+        }
 
         .service-list li:hover {
             transform: scale(1.02);
@@ -140,13 +138,13 @@
         }
 
         .btn {
-    color: red; /* FAQ linkinin rəngi qırmızı olsun */
-    text-decoration: none; /* Alt xətləri silək */
-}
+            color: red; /* FAQ linkinin rəngi qırmızı olsun */
+            text-decoration: none; /* Alt xətləri silək */
+        }
 
-.btn:hover {
-    color: darkred; /* Hover effekti ilə rəngi bir az tündləşdirək */
-}
+        .btn:hover {
+            color: darkred; /* Hover effekti ilə rəngi bir az tündləşdirək */
+        }
 
         .qr img {
             width: 120px;
@@ -250,6 +248,16 @@
             <img src="foto2.png" alt="Foto 2" class="service-image">
             <img src="foto3.png" alt="Foto 3" class="service-image">
         </div>
+
+        <!-- Domen Axtarış Paneli -->
+        <section class="domain-search">
+            <h2>Domen Axtarış</h2>
+            <form action="https://your-domain-search-api-url.com/search" method="GET" target="_blank">
+                <input type="text" name="domain" placeholder="Domen adını daxil edin" required style="width: 60%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                <button type="submit" style="padding: 10px 20px; background-color: #050953; color: white; border: none; border-radius: 5px; cursor: pointer;">Axtar</button>
+            </form>
+        </section>
+
         <section class="services">
             <h2>Xidmətlər</h2>
 
