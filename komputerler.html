@@ -120,209 +120,128 @@
 </head>
 <body>
 
-    <header>
-        <img src="logo.png" alt="isio.az Logo">
-        <p style="text-align: right; margin: 10px;">
-            <a href="index.html" class="btn">🔙 Ana səhifəyə qayıt</a>
-        </p>
-    </header>
+<header>
+    <img src="logo.png" alt="isio.az Logo">
+    <p style="text-align: right; margin: 10px;">
+        <a href="index.html" class="btn">🔙 Ana səhifəyə qayıt</a>
+    </p>
+</header>
 
-    <main>
-        <h1>Komputer Parametrlərini Seçin</h1>
-        
-        <form id="searchForm">
-            <!-- Mağaza Seçimi -->
+<main>
+    <h1>Komputer Parametrlərini Seçin</h1>
+    
+    <form id="searchForm">
+        <!-- İstehsalçı Seçimi -->
+        <label for="brand">İstehsalçı:</label>
+        <select id="brand">
             <option value="">Seçim et</option>
-            <label for="shop">Mağaza Seçin:</label>
-            <select id="shop" onchange="updateSelections()">
-                <option value="">Seçim et</option>
-                <option value="kontakt">Kontakt</option>
-                <option value="irshad">Irshad</option>
-            </select>
-            <br><br>
+            <option value="Acer">Acer</option>
+            <option value="Apple">Apple</option>
+            <option value="Asus">Asus</option>
+            <option value="Dell">Dell</option>
+            <option value="F+">F+</option>
+            <option value="HP">HP</option>
+            <option value="HUAWEI">HUAWEI</option>
+            <option value="Lenovo">Lenovo</option>
+            <option value="MSI">MSI</option>
+            <option value="Tecno">Tecno</option>
+        </select>
+        <br><br>
 
-            <!-- CPU Seçimi -->
-            <label for="cpu">CPU:</label>
-            <select id="cpu">
-                <option value="">Seçim et</option>
-                <option value="AMD Ryzen 3 5300U">AMD Ryzen 3 5300U</option>
-                <option value="AMD Ryzen 5 4500U">AMD Ryzen 5 4500U</option>
-                <option value="AMD Ryzen 5 5500U">AMD Ryzen 5 5500U</option>
-                <option value="AMD Ryzen 5 5600U">AMD Ryzen 5 5600U</option>
-                <option value="Intel Core i3-1005G1">Intel Core i3-1005G1</option>
-                <option value="Intel Core i5-1135G7">Intel Core i5-1135G7</option>
-                <option value="Intel Core i5-12500H">Intel Core i5-12500H</option>
-                <option value="Intel Core i7-1165G7">Intel Core i7-1165G7</option>
-            </select>
-            <br><br>
-            
-            <!-- RAM Seçimi -->
-            <label for="ram">RAM:</label>
-            <select id="ram">
-                <option value="">Seçim et</option>
-                <option value="8 GB DDR4 2666 MHz">8 GB DDR4 2666 MHz</option>
-                <option value="16 GB DDR4 2666 MHz">16 GB DDR4 2666 MHz</option>
-                <option value="16 GB DDR4 3200 MHz">16 GB DDR4 3200 MHz</option>
-                <option value="32 GB DDR4 2666 MHz">32 GB DDR4 2666 MHz</option>
-            </select>
-            <br><br>
-            
-            <!-- SSD Seçimi -->
-            <label for="ssd">SSD və HDD:</label>
-            <select id="ssd">
-                <option value="">Seçim et</option>
-                <option value="SSD 256 GB">SSD 256 GB</option>
-                <option value="SSD 512 GB">SSD 512 GB</option>
-                <option value="SSD 1TB">SSD 1TB</option>
-                <option value="HDD 1TB">HDD 1TB</option>
-                <option value="HDD 500GB">HDD 500GB</option>
-            </select>
-            <br><br>
+        <!-- CPU -->
+        <label for="cpu">CPU:</label>
+        <select id="cpu">
+            <option value="">Seçim et</option>
+            <option value="AMD Ryzen 3 5300U">AMD Ryzen 3 5300U</option>
+            <option value="AMD Ryzen 5 4500U">AMD Ryzen 5 4500U</option>
+            <option value="AMD Ryzen 5 5500U">AMD Ryzen 5 5500U</option>
+            <option value="AMD Ryzen 5 5600U">AMD Ryzen 5 5600U</option>
+            <option value="Intel Core i3-1005G1">Intel Core i3-1005G1</option>
+            <option value="Intel Core i5-1135G7">Intel Core i5-1135G7</option>
+            <option value="Intel Core i5-12500H">Intel Core i5-12500H</option>
+            <option value="Intel Core i7-1165G7">Intel Core i7-1165G7</option>
+        </select>
+        <br><br>
 
-            <!-- GPU Seçimi -->
-            <label for="gpu">GPU:</label>
-            <select id="gpu">
-                <option value="">Seçim et</option>
-                <option value="Intel Iris Xe">Intel Iris Xe</option>
-                <option value="Intel UHD Graphics">Intel UHD Graphics</option>
-                <option value="NVIDIA GTX 1050">NVIDIA GTX 1050</option>
-                <option value="NVIDIA GTX 1650">NVIDIA GTX 1650</option>
-                <option value="NVIDIA RTX 3050">NVIDIA RTX 3050</option>
-            </select>
-            <br><br>
-            
-            <button type="button" onclick="search()">Axtarış et</button>
-        </form>
+        <!-- RAM -->
+        <label for="ram">RAM:</label>
+        <select id="ram">
+            <option value="">Seçim et</option>
+            <option value="8 GB DDR4 2666 MHz">8 GB DDR4 2666 MHz</option>
+            <option value="16 GB DDR4 2666 MHz">16 GB DDR4 2666 MHz</option>
+            <option value="16 GB DDR4 3200 MHz">16 GB DDR4 3200 MHz</option>
+            <option value="32 GB DDR4 2666 MHz">32 GB DDR4 2666 MHz</option>
+        </select>
+        <br><br>
 
-        <!-- Google CSE Axtarış Kodu -->
-        <script async src="https://cse.google.com/cse.js?cx=a79b53cb2b90e4416"></script>
-        <div class="gcse-search"></div>
+        <!-- SSD və HDD -->
+        <label for="ssd">SSD və HDD:</label>
+        <select id="ssd">
+            <option value="">Seçim et</option>
+            <option value="SSD 256 GB">SSD 256 GB</option>
+            <option value="SSD 512 GB">SSD 512 GB</option>
+            <option value="SSD 1TB">SSD 1TB</option>
+            <option value="HDD 1TB">HDD 1TB</option>
+            <option value="HDD 500GB">HDD 500GB</option>
+        </select>
+        <br><br>
 
-        <div class="contact-info">
-            <div>
-                <p><strong>Bizimlə əlaqə saxlayın:</strong></p>
-                <p>📞 <strong><a href="https://wa.me/994559563119" target="_blank" style="text-decoration: none; color: inherit;">+994 55 956 31 19</a></strong></p>
-                <p>📧 <strong><a href="mailto:support@isio.az" style="text-decoration: none; color: inherit;">support@isio.az</a></strong></p>
-            </div>
-            <div class="qr">
-                <a href="https://www.instagram.com/isio.az/" target="_blank">
-                    <img src="QR.png" alt="Instagram QR Kodu">
-                </a>
-            </div>
+        <!-- GPU -->
+        <label for="gpu">GPU:</label>
+        <select id="gpu">
+            <option value="">Seçim et</option>
+            <option value="Intel Iris Xe">Intel Iris Xe</option>
+            <option value="Intel UHD Graphics">Intel UHD Graphics</option>
+            <option value="NVIDIA GTX 1050">NVIDIA GTX 1050</option>
+            <option value="NVIDIA GTX 1650">NVIDIA GTX 1650</option>
+            <option value="NVIDIA RTX 3050">NVIDIA RTX 3050</option>
+        </select>
+        <br><br>
+
+        <button type="button" onclick="search()">Axtarış et</button>
+    </form>
+
+    <script async src="https://cse.google.com/cse.js?cx=a79b53cb2b90e4416"></script>
+    <div class="gcse-search"></div>
+
+    <div class="contact-info">
+        <div>
+            <p><strong>Bizimlə əlaqə saxlayın:</strong></p>
+            <p>📞 <strong><a href="https://wa.me/994559563119" target="_blank">+994 55 956 31 19</a></strong></p>
+            <p>📧 <strong><a href="mailto:support@isio.az">support@isio.az</a></strong></p>
         </div>
-    </main>
+        <div class="qr">
+            <a href="https://www.instagram.com/isio.az/" target="_blank">
+                <img src="QR.png" alt="Instagram QR Kodu">
+            </a>
+        </div>
+    </div>
+</main>
 
-    <footer>
-        <p>&copy; 2025 isio.az - Bütün hüquqlar qorunur</p>
-    </footer>
+<footer>
+    <p>&copy; 2025 isio.az - Bütün hüquqlar qorunur</p>
+</footer>
 
-    <script>
-        function updateSelections() {
-            const shop = document.getElementById("shop").value;
-            const cpu = document.getElementById("cpu");
-            const ram = document.getElementById("ram");
-            const ssd = document.getElementById("ssd");
-            const gpu = document.getElementById("gpu");
+<script>
+    function search() {
+        const brand = document.getElementById("brand").value;
+        const cpu = document.getElementById("cpu").value;
+        const ram = document.getElementById("ram").value;
+        const ssd = document.getElementById("ssd").value;
+        const gpu = document.getElementById("gpu").value;
 
-            // Clear existing options
-            cpu.innerHTML = "";
-            ram.innerHTML = "";
-            ssd.innerHTML = "";
-            gpu.innerHTML = "";
+        const query = `${brand} ${cpu} ${ram} ${ssd} ${gpu}`;
+        const searchBox = document.querySelector("input.gsc-input");
+        const searchButton = document.querySelector("button.gsc-search-button");
 
-            if (shop === "kontakt") {
-                // Kontakt Mağazası Seçimləri
-                cpu.innerHTML = `
-                <option value="">Seçim et</option>
-                    <option value="AMD Ryzen 3 5300U">AMD Ryzen 3 5300U</option>
-                    <option value="AMD Ryzen 5 4500U">AMD Ryzen 5 4500U</option>
-                    <option value="AMD Ryzen 5 5500U">AMD Ryzen 5 5500U</option>
-                    <option value="AMD Ryzen 5 5600U">AMD Ryzen 5 5600U</option>
-                    <option value="Intel Core i3-1005G1">Intel Core i3-1005G1</option>
-                    <option value="Intel Core i5-1135G7">Intel Core i5-1135G7</option>
-                    <option value="Intel Core i5-12500H">Intel Core i5-12500H</option>
-                    <option value="Intel Core i7-1165G7">Intel Core i7-1165G7</option>
-                `;
-                ram.innerHTML = `
-                <option value="">Seçim et</option>
-                    <option value="8 GB DDR4 2666 MHz">8 GB DDR4 2666 MHz</option>
-                    <option value="16 GB DDR4 2666 MHz">16 GB DDR4 2666 MHz</option>
-                    <option value="16 GB DDR4 3200 MHz">16 GB DDR4 3200 MHz</option>
-                    <option value="32 GB DDR4 2666 MHz">32 GB DDR4 2666 MHz</option>
-                `;
-                ssd.innerHTML = `
-                <option value="">Seçim et</option>
-                    <option value="SSD 256 GB">SSD 256 GB</option>
-                    <option value="SSD 512 GB">SSD 512 GB</option>
-                    <option value="SSD 1TB">SSD 1TB</option>
-                    <option value="HDD 1TB">HDD 1TB</option>
-                    <option value="HDD 500GB">HDD 500GB</option>
-                `;
-                gpu.innerHTML = `
-                <option value="">Seçim et</option>
-                    <option value="Intel Iris Xe">Intel Iris Xe</option>
-                    <option value="Intel UHD Graphics">Intel UHD Graphics</option>
-                    <option value="NVIDIA GTX 1050">NVIDIA GTX 1050</option>
-                    <option value="NVIDIA GTX 1650">NVIDIA GTX 1650</option>
-                    <option value="NVIDIA RTX 3050">NVIDIA RTX 3050</option>
-                `;
-            } else if (shop === "irshad") {
-                // Irshad Mağazası Seçimləri
-                cpu.innerHTML = `
-                <option value="">Seçim et</option>
-                    <option value="AMD Ryzen 3">AMD Ryzen 3</option>
-                    <option value="Intel® Core™ i3-1005G1">Intel® Core™ i3-1005G1</option>
-                    <option value="Intel® Core™ i5-12500H">Intel® Core™ i5-12500H</option>
-                    <option value="Intel® Core™ i7-1165G7">Intel® Core™ i7-1165G7</option>
-                `;
-                ram.innerHTML = `
-                <option value="">Seçim et</option>
-                    <option value="8 GB DDR4">8 GB DDR4</option>
-                    <option value="16 GB DDR4">16 GB DDR4</option>
-                    <option value="32 GB DDR4">32 GB DDR4</option>
-                `;
-                ssd.innerHTML = `
-                <option value="">Seçim et</option>
-                    <option value="256 GB SSD">256 GB SSD</option>
-                    <option value="512 GB SSD">512 GB SSD</option>
-                    <option value="1TB SSD">1TB SSD</option>
-                    <option value="HDD 1TB">HDD 1TB</option>
-                `;
-                gpu.innerHTML = `
-                <option value="">Seçim et</option>
-                    <option value="Intel UHD Graphics">Intel UHD Graphics</option>
-                    <option value="NVIDIA GTX 1050">NVIDIA GTX 1050</option>
-                    <option value="NVIDIA GTX 1650">NVIDIA GTX 1650</option>
-                    <option value="NVIDIA RTX 3050">NVIDIA RTX 3050</option>
-                `;
-            }
+        if (searchBox && searchButton) {
+            searchBox.value = query;
+            searchButton.click();
+        } else {
+            alert("Axtarış sahəsi yüklənməyib. Zəhmət olmasa bir az gözləyin.");
         }
-
-        function search() {
-    const cpu = document.getElementById("cpu").value;
-    const ram = document.getElementById("ram").value;
-    const ssd = document.getElementById("ssd").value;
-    const gpu = document.getElementById("gpu").value;
-    const shop = document.getElementById("shop").value;
-
-    // Sorğu formalaşdırılır
-    const query = `${shop} ${cpu} ${ram} ${ssd} ${gpu}`;
-
-    // Google Custom Search inputunu tapıb sorğunu daxil edirik
-    const searchBox = document.querySelector("input.gsc-input");
-    const searchButton = document.querySelector("button.gsc-search-button");
-
-    if (searchBox && searchButton) {
-        searchBox.value = query;
-        searchButton.click();
-    } else {
-        alert("Axtarış sahəsi yüklənməyib. Zəhmət olmasa bir az gözləyin.");
     }
-}
+</script>
 
-
-        // Initialize with default selections
-        window.onload = updateSelections;
-    </script>
 </body>
 </html>
