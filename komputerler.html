@@ -132,8 +132,10 @@
         
         <form id="searchForm">
             <!-- Mağaza Seçimi -->
+            <option value="">Seçim et</option>
             <label for="shop">Mağaza Seçin:</label>
             <select id="shop" onchange="updateSelections()">
+                <option value="">Seçim et</option>
                 <option value="kontakt">Kontakt</option>
                 <option value="irshad">Irshad</option>
             </select>
@@ -142,6 +144,7 @@
             <!-- CPU Seçimi -->
             <label for="cpu">CPU:</label>
             <select id="cpu">
+                <option value="">Seçim et</option>
                 <option value="AMD Ryzen 3 5300U">AMD Ryzen 3 5300U</option>
                 <option value="AMD Ryzen 5 4500U">AMD Ryzen 5 4500U</option>
                 <option value="AMD Ryzen 5 5500U">AMD Ryzen 5 5500U</option>
@@ -156,6 +159,7 @@
             <!-- RAM Seçimi -->
             <label for="ram">RAM:</label>
             <select id="ram">
+                <option value="">Seçim et</option>
                 <option value="8 GB DDR4 2666 MHz">8 GB DDR4 2666 MHz</option>
                 <option value="16 GB DDR4 2666 MHz">16 GB DDR4 2666 MHz</option>
                 <option value="16 GB DDR4 3200 MHz">16 GB DDR4 3200 MHz</option>
@@ -166,6 +170,7 @@
             <!-- SSD Seçimi -->
             <label for="ssd">SSD və HDD:</label>
             <select id="ssd">
+                <option value="">Seçim et</option>
                 <option value="SSD 256 GB">SSD 256 GB</option>
                 <option value="SSD 512 GB">SSD 512 GB</option>
                 <option value="SSD 1TB">SSD 1TB</option>
@@ -177,6 +182,7 @@
             <!-- GPU Seçimi -->
             <label for="gpu">GPU:</label>
             <select id="gpu">
+                <option value="">Seçim et</option>
                 <option value="Intel Iris Xe">Intel Iris Xe</option>
                 <option value="Intel UHD Graphics">Intel UHD Graphics</option>
                 <option value="NVIDIA GTX 1050">NVIDIA GTX 1050</option>
@@ -227,6 +233,7 @@
             if (shop === "kontakt") {
                 // Kontakt Mağazası Seçimləri
                 cpu.innerHTML = `
+                <option value="">Seçim et</option>
                     <option value="AMD Ryzen 3 5300U">AMD Ryzen 3 5300U</option>
                     <option value="AMD Ryzen 5 4500U">AMD Ryzen 5 4500U</option>
                     <option value="AMD Ryzen 5 5500U">AMD Ryzen 5 5500U</option>
@@ -237,12 +244,14 @@
                     <option value="Intel Core i7-1165G7">Intel Core i7-1165G7</option>
                 `;
                 ram.innerHTML = `
+                <option value="">Seçim et</option>
                     <option value="8 GB DDR4 2666 MHz">8 GB DDR4 2666 MHz</option>
                     <option value="16 GB DDR4 2666 MHz">16 GB DDR4 2666 MHz</option>
                     <option value="16 GB DDR4 3200 MHz">16 GB DDR4 3200 MHz</option>
                     <option value="32 GB DDR4 2666 MHz">32 GB DDR4 2666 MHz</option>
                 `;
                 ssd.innerHTML = `
+                <option value="">Seçim et</option>
                     <option value="SSD 256 GB">SSD 256 GB</option>
                     <option value="SSD 512 GB">SSD 512 GB</option>
                     <option value="SSD 1TB">SSD 1TB</option>
@@ -250,6 +259,7 @@
                     <option value="HDD 500GB">HDD 500GB</option>
                 `;
                 gpu.innerHTML = `
+                <option value="">Seçim et</option>
                     <option value="Intel Iris Xe">Intel Iris Xe</option>
                     <option value="Intel UHD Graphics">Intel UHD Graphics</option>
                     <option value="NVIDIA GTX 1050">NVIDIA GTX 1050</option>
@@ -259,23 +269,27 @@
             } else if (shop === "irshad") {
                 // Irshad Mağazası Seçimləri
                 cpu.innerHTML = `
+                <option value="">Seçim et</option>
                     <option value="AMD Ryzen 3">AMD Ryzen 3</option>
                     <option value="Intel® Core™ i3-1005G1">Intel® Core™ i3-1005G1</option>
                     <option value="Intel® Core™ i5-12500H">Intel® Core™ i5-12500H</option>
                     <option value="Intel® Core™ i7-1165G7">Intel® Core™ i7-1165G7</option>
                 `;
                 ram.innerHTML = `
+                <option value="">Seçim et</option>
                     <option value="8 GB DDR4">8 GB DDR4</option>
                     <option value="16 GB DDR4">16 GB DDR4</option>
                     <option value="32 GB DDR4">32 GB DDR4</option>
                 `;
                 ssd.innerHTML = `
+                <option value="">Seçim et</option>
                     <option value="256 GB SSD">256 GB SSD</option>
                     <option value="512 GB SSD">512 GB SSD</option>
                     <option value="1TB SSD">1TB SSD</option>
                     <option value="HDD 1TB">HDD 1TB</option>
                 `;
                 gpu.innerHTML = `
+                <option value="">Seçim et</option>
                     <option value="Intel UHD Graphics">Intel UHD Graphics</option>
                     <option value="NVIDIA GTX 1050">NVIDIA GTX 1050</option>
                     <option value="NVIDIA GTX 1650">NVIDIA GTX 1650</option>
