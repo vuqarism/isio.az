@@ -285,14 +285,27 @@
         }
 
         function search() {
-            const cpu = document.getElementById("cpu").value;
-            const ram = document.getElementById("ram").value;
-            const ssd = document.getElementById("ssd").value;
-            const gpu = document.getElementById("gpu").value;
+    const cpu = document.getElementById("cpu").value;
+    const ram = document.getElementById("ram").value;
+    const ssd = document.getElementById("ssd").value;
+    const gpu = document.getElementById("gpu").value;
+    const shop = document.getElementById("shop").value;
 
-            // Handle search logic or display information based on selections
-            alert(`Axtarış: CPU: ${cpu}, RAM: ${ram}, SSD: ${ssd}, GPU: ${gpu}`);
-        }
+    // Sorğu formalaşdırılır
+    const query = `${shop} ${cpu} ${ram} ${ssd} ${gpu}`;
+
+    // Google Custom Search inputunu tapıb sorğunu daxil edirik
+    const searchBox = document.querySelector("input.gsc-input");
+    const searchButton = document.querySelector("button.gsc-search-button");
+
+    if (searchBox && searchButton) {
+        searchBox.value = query;
+        searchButton.click();
+    } else {
+        alert("Axtarış sahəsi yüklənməyib. Zəhmət olmasa bir az gözləyin.");
+    }
+}
+
 
         // Initialize with default selections
         window.onload = updateSelections;
