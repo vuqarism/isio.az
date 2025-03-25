@@ -233,6 +233,24 @@
                 flex-direction: column;
             }
         }
+
+        .btn {
+            display: inline-flex;
+            align-items: center; /* İkonu mətni ilə düz alin */
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #050953; /* Düymənin arxa fon rəngi */
+            border: none;
+            border-radius: 5px; /* Künclərin dairəsi */
+            text-decoration: none; /* Alt xətti gizlə */
+            transition: background-color 0.3s; /* Rəng dəyişməsinin animasiyası */
+            margin-top: 20px; /* Baş səhifə ilə düymə arasında məsafə */
+        }
+        
+        .btn:hover {
+            background-color: #ffffff; /* Hover zamanı arxa fon rəngi */
+        }
     </style>
 </head>
 <body>
@@ -240,9 +258,14 @@
     <header>
         <img src="logo.png" alt="isio.az Logo">
         <p style="text-align: right; margin: 10px;">
-            <a href="komputerler.html" class="btn">🔧 Özünə uyğun komputer axtarışı</a>
         </p>
     </header>
+
+    <body>
+        <a href="komputerler.html" class="btn">
+            <i class="fas fa-search"></i> Özünə uyğun komputer axtarışı
+        </a>
+    </body>
 
     <main>
         <div class="service-images">
