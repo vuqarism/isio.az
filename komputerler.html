@@ -41,7 +41,7 @@
 
         h1 {
             text-align: center;
-            color: #004aad;
+            color: #3a11f0;
             margin-bottom: 30px;
         }
 
@@ -120,12 +120,12 @@
 </head>
 <body>
 
-<header>
-    <img src="logo.png" alt="isio.az Logo">
-    <p style="text-align: right; margin: 10px;">
-        <a href="index.html" class="btn" style="color: yellow;">🔙 Ana səhifəyə qayıt</a>
-    </p>
-</header>
+    <header>
+        <img src="logo.png" alt="isio.az Logo">
+        <p style="text-align: right; margin: 10px;">
+            <a href="index.html" class="btn" style="color: yellow;">🔙 Ana səhifəyə qayıt</a>
+        </p>
+    </header>
 
 <main>
     <h1>Komputer Parametrlərini Seçin</h1>
@@ -149,53 +149,153 @@
         <br><br>
 
         <!-- CPU -->
-        <label for="cpu">CPU:</label>
-        <select id="cpu">
-            <option value="">Seçim et</option>
-            <option value="AMD Ryzen 3 5300U">AMD Ryzen 3 5300U</option>
-            <option value="AMD Ryzen 5 4500U">AMD Ryzen 5 4500U</option>
-            <option value="AMD Ryzen 5 5500U">AMD Ryzen 5 5500U</option>
-            <option value="AMD Ryzen 5 5600U">AMD Ryzen 5 5600U</option>
-            <option value="Intel Core i3-1005G1">Intel Core i3-1005G1</option>
-            <option value="Intel Core i5-1135G7">Intel Core i5-1135G7</option>
-            <option value="Intel Core i5-12500H">Intel Core i5-12500H</option>
-            <option value="Intel Core i7-1165G7">Intel Core i7-1165G7</option>
+        <label for="cpu">CPU seçimi:</label>
+        <select id="cpu" name="cpu">
+          <option value="">Seçim et</option>
+          <option value="AMD Ryzen 3">AMD Ryzen 3</option>
+          <option value="AMD Ryzen™ 5 5500U">AMD Ryzen™ 5 5500U</option>
+          <option value="AMD Ryzen 7">AMD Ryzen 7</option>
+          <option value="AMD® Ryzen™ 7 5700U">AMD® Ryzen™ 7 5700U</option>
+          <option value="AMD Ryzen™ 7 5700U">AMD Ryzen™ 7 5700U</option>
+          <option value="AMD Ryzen 7 6800HS">AMD Ryzen 7 6800HS</option>
+          <option value="AMD Ryzen™ 5 7520U">AMD Ryzen™ 5 7520U</option>
+          <option value="AMD Ryzen™ 5 7530U">AMD Ryzen™ 5 7530U</option>
+          <option value="AMD Ryzen™ 7 7730U">AMD Ryzen™ 7 7730U</option>
+          <option value="AMD Ryzen™ 7 7735U">AMD Ryzen™ 7 7735U</option>
+          <option value="AMD Ryzen™ 5 7535U">AMD Ryzen™ 5 7535U</option>
+          <option value="AMD Ryzen™ 5 7535HS">AMD Ryzen™ 5 7535HS</option>
+          <option value="AMD Ryzen R5-7530U">AMD Ryzen R5-7530U</option>
+          <option value="AMD Ryzen 7 8840HS">AMD Ryzen 7 8840HS</option>
+          <option value="AMD Ryzen™ 5 8640HS">AMD Ryzen™ 5 8640HS</option>
+          <option value="Intel® Celeron® N4020">Intel® Celeron® N4020</option>
+          <option value="Intel® Celeron® N4120">Intel® Celeron® N4120</option>
+          <option value="Intel® Celeron® N4500">Intel® Celeron® N4500</option>
+          <option value="Intel® Pentium® Silver N6000">Intel® Pentium® Silver N6000</option>
+          <option value="Intel® Core™ i3-1005G1">Intel® Core™ i3-1005G1</option>
+          <option value="Intel® Core™ i3-1115G4">Intel® Core™ i3-1115G4</option>
+          <option value="Intel® Core™ i3-1215U">Intel® Core™ i3-1215U</option>
+          <option value="Intel® Core™ i3-1305U">Intel® Core™ i3-1305U</option>
+          <option value="Intel® Core™ i3-1315U">Intel® Core™ i3-1315U</option>
+          <option value="Intel® Core™ i3-1315U">Intel® Core™ i3-1315U</option>
+          <option value="Intel® Core™ i3-1215U">Intel® Core™ i3-1215U</option>
+          <option value="Intel® Core™ i7-11370H">Intel® Core™ i7-11370H</option>
+          <option value="Intel® Core™ i7-12700H">Intel® Core™ i7-12700H</option>
+          <option value="Intel® Core™ i7-11390H">Intel® Core™ i7-11390H</option>
+          <option value="Intel® Core™ i7-1255U">Intel® Core™ i7-1255U</option>
+          <option value="Intel® Core™ i7-1250U">Intel® Core™ i7-1250U</option>
+          <option value="Intel® Core™ i7-1255U">Intel® Core™ i7-1255U</option>
+          <option value="Intel® Core™ i7-1360P">Intel® Core™ i7-1360P</option>
+          <option value="Intel® Core™ i7-13700H">Intel® Core™ i7-13700H</option>
+          <option value="Intel® Core™ i7-1380P">Intel® Core™ i7-1380P</option>
+          <option value="Intel® Core™ i5-1235U">Intel® Core™ i5-1235U</option>
+          <option value="Intel® Core™ i5-12450H">Intel® Core™ i5-12450H</option>
+          <option value="Intel® Core™ i5-12500H">Intel® Core™ i5-12500H</option>
+          <option value="Intel® Core™ i5-1335U">Intel® Core™ i5-1335U</option>
+          <option value="Intel® Core™ i5-1334U">Intel® Core™ i5-1334U</option>
+          <option value="Intel® Core™ i5-1340P">Intel® Core™ i5-1340P</option>
+          <option value="Intel® Core™ i5-13500H">Intel® Core™ i5-13500H</option>
+          <option value="Intel® Core™ i5-12450H">Intel® Core™ i5-12450H</option>
+          <option value="Intel® Core™ i5-13450H">Intel® Core™ i5-13450H</option>
+          <option value="Intel® Core™ i7-13650 HX">Intel® Core™ i7-13650 HX</option>
+          <option value="Intel® Core™ i9-14900HX">Intel® Core™ i9-14900HX</option>
+          <option value="Intel® Core™ i5-13420H">Intel® Core™ i5-13420H</option>
+          <option value="Intel® Core™ i7-13620H">Intel® Core™ i7-13620H</option>
+          <option value="Intel® Core™ i5-1250U">Intel® Core™ i5-1250U</option>
+          <option value="Intel® Core™ i7-1255U">Intel® Core™ i7-1255U</option>
+          <option value="Intel® Core™ i9-14900HX">Intel® Core™ i9-14900HX</option>
+          <option value="Apple M2">Apple M2</option>
+          <option value="Apple M3">Apple M3</option>
+          <option value="Apple M3 Pro">Apple M3 Pro</option>
+          <option value="Apple M3 Max">Apple M3 Max</option>
+          <option value="Apple m4">Apple m4</option>
+          <option value="Apple M4 Pro">Apple M4 Pro</option>
+          <option value="Apple M4 Max">Apple M4 Max</option>
+          <option value="Snapdragon X Elite X1E 78 100">Snapdragon X Elite X1E 78 100</option>
         </select>
+        
         <br><br>
 
-        <!-- RAM -->
-        <label for="ram">RAM:</label>
-        <select id="ram">
-            <option value="">Seçim et</option>
-            <option value="8 GB DDR4 2666 MHz">8 GB DDR4 2666 MHz</option>
-            <option value="16 GB DDR4 2666 MHz">16 GB DDR4 2666 MHz</option>
-            <option value="16 GB DDR4 3200 MHz">16 GB DDR4 3200 MHz</option>
-            <option value="32 GB DDR4 2666 MHz">32 GB DDR4 2666 MHz</option>
+        <label for="ram">RAM seçimi:</label>
+        <select id="ram" name="ram">
+        <option value="">Seçim et</option>
+          <option value="DDR4 16 GB, 2666 MHz">DDR4 16 GB, 2666 MHz</option>
+          <option value="DDR4 16GB, 4266 MHz">DDR4 16GB, 4266 MHz</option>
+          <option value="DDR4 16GB, 3200 MHz">DDR4 16GB, 3200 MHz</option>
+          <option value="DDR4 4GB, 2400 MHz">DDR4 4GB, 2400 MHz</option>
+          <option value="DDR4 4GB, 3200 MHz">DDR4 4GB, 3200 MHz</option>
+          <option value="DDR4 8 GB, 2666 MHz">DDR4 8 GB, 2666 MHz</option>
+          <option value="DDR4 8 GB, 4800 MHz">DDR4 8 GB, 4800 MHz</option>
+          <option value="DDR4 8GB, 3200 MHz">DDR4 8GB, 3200 MHz</option>
+          <option value="DDR5 16GB, 5600 MHz">DDR5 16GB, 5600 MHz</option>
+          <option value="DDR5 16GB, 4800 MHz">DDR5 16GB, 4800 MHz</option>
         </select>
         <br><br>
 
         <!-- SSD və HDD -->
-        <label for="ssd">SSD və HDD:</label>
-        <select id="ssd">
-            <option value="">Seçim et</option>
-            <option value="SSD 256 GB">SSD 256 GB</option>
-            <option value="SSD 512 GB">SSD 512 GB</option>
-            <option value="SSD 1TB">SSD 1TB</option>
-            <option value="HDD 1TB">HDD 1TB</option>
-            <option value="HDD 500GB">HDD 500GB</option>
+        <label for="storage">SSD və HDD:</label>
+        <select id="storage" name="storage">
+          <option value="">Seçim et</option>
+          <option value="HDD 1TB">HDD 1TB</option>
+          <option value="SSD 64GB">SSD 64GB</option>
+          <option value="SSD 240GB">SSD 240GB</option>
+          <option value="SSD 256GB">SSD 256GB</option>
+          <option value="SSD 256GB, HDD 1TB">SSD 256GB, HDD 1TB</option>
+          <option value="SSD 512GB">SSD 512GB</option>
+          <option value="SSD 1TB">SSD 1TB</option>
+          <option value="SSD 2TB">SSD 2TB</option>
+          <option value="SSD 4TB">SSD 4TB</option>
         </select>
+        
         <br><br>
 
         <!-- GPU -->
-        <label for="gpu">GPU:</label>
-        <select id="gpu">
-            <option value="">Seçim et</option>
-            <option value="Intel Iris Xe">Intel Iris Xe</option>
-            <option value="Intel UHD Graphics">Intel UHD Graphics</option>
-            <option value="NVIDIA GTX 1050">NVIDIA GTX 1050</option>
-            <option value="NVIDIA GTX 1650">NVIDIA GTX 1650</option>
-            <option value="NVIDIA RTX 3050">NVIDIA RTX 3050</option>
+        <label for="gpu">Qrafik kartı seçimi:</label>
+        <select id="gpu" name="gpu">
+        <option value="">Seçim et</option>
+          <option value="AMD Radeon™">AMD Radeon™</option>
+          <option value="AMD Radeon™ Graphics">AMD Radeon™ Graphics</option>
+          <option value="AMD Radeon 680M">AMD Radeon 680M</option>
+          <option value="AMD Radeon 890M">AMD Radeon 890M</option>
+          <option value="AMD Radeon RX 6800S">AMD Radeon RX 6800S</option>
+          <option value="AMD Radeon 610M">AMD Radeon 610M</option>
+          <option value="AMD Radeon Graphics">AMD Radeon Graphics</option>
+          <option value="AMD Ryzen 3">AMD Ryzen 3</option>
+          <option value="Apple M2 10-Core">Apple M2 10-Core</option>
+          <option value="Apple M2 8-Core">Apple M2 8-Core</option>
+          <option value="Apple M3 18-core">Apple M3 18-core</option>
+          <option value="Apple M3 8-core">Apple M3 8-core</option>
+          <option value="Apple M4 10-core">Apple M4 10-core</option>
+          <option value="Intel® Arc™ A370M Graphics 4 GB GDDR6">Intel® Arc™ A370M Graphics 4 GB GDDR6</option>
+          <option value="Intel® Arc™ Graphics">Intel® Arc™ Graphics</option>
+          <option value="Intel® HD Graphics">Intel® HD Graphics</option>
+          <option value="Intel® Iris® Xe">Intel® Iris® Xe</option>
+          <option value="Intel® Iris® Xe Graphics">Intel® Iris® Xe Graphics</option>
+          <option value="Intel® Iris® Xᵉ Graphics">Intel® Iris® Xᵉ Graphics</option>
+          <option value="Intel® UHD Graphics">Intel® UHD Graphics</option>
+          <option value="Intel® UHD Graphics 600">Intel® UHD Graphics 600</option>
+          <option value="Intel® UMA">Intel® UMA</option>
+          <option value="Intel®UHD Graphics">Intel®UHD Graphics</option>
+          <option value="Intel® Iris Graphics">Intel® Iris Graphics</option>
+          <option value="Intel® Graphics">Intel® Graphics</option>
+          <option value="Intel Graphics">Intel Graphics</option>
+          <option value="NVIDIA® GeForce® MX330">NVIDIA® GeForce® MX330</option>
+          <option value="NVIDIA GeForce MX550 2GB">NVIDIA GeForce MX550 2GB</option>
+          <option value="NVIDIA® GeForce RTX 3050">NVIDIA® GeForce RTX 3050</option>
+          <option value="NVIDIA GeForce RTX 3050 4GB">NVIDIA GeForce RTX 3050 4GB</option>
+          <option value="NVIDIA GeForce RTX 3050 6GB">NVIDIA GeForce RTX 3050 6GB</option>
+          <option value="NVIDIA® GeForce RTX™ 3070Ti">NVIDIA® GeForce RTX™ 3070Ti</option>
+          <option value="NVIDIA® GeForce RTX™ 4050">NVIDIA® GeForce RTX™ 4050</option>
+          <option value="NVIDIA® GeForce RTX™ 4060">NVIDIA® GeForce RTX™ 4060</option>
+          <option value="NVIDIA® GeForce RTX™ 4070">NVIDIA® GeForce RTX™ 4070</option>
+          <option value="NVIDIA GeForce RTX 4070 8 GB">NVIDIA GeForce RTX 4070 8 GB</option>
+          <option value="NVIDIA GeForce RTX 4060 8GB">NVIDIA GeForce RTX 4060 8GB</option>
+          <option value="NVIDIA® GeForce® RTX 4050 6GB">NVIDIA® GeForce® RTX 4050 6GB</option>
+          <option value="NVIDIA® GeForce® RTX 2050 4GB">NVIDIA® GeForce® RTX 2050 4GB</option>
+          <option value="NVIDIA® GeForce® MX570 A">NVIDIA® GeForce® MX570 A</option>
+          <option value="NVIDIA® GeForce RTX™ 4090 16GB">NVIDIA® GeForce RTX™ 4090 16GB</option>
+          <option value="Qualcomm Adreno">Qualcomm Adreno</option>
         </select>
+        
         <br><br>
 
         <button type="button" onclick="search()">Axtarış et</button>
