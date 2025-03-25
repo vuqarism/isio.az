@@ -196,43 +196,28 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Button styles */
-        .prices-button {
-            display: block;
-            width: 150px;
-            margin: 20px auto; /* Center the button */
-            padding: 15px;
-            background-color: #050953;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        
-        .prices-button:hover {
-            transform: scale(1.05);
-            background-color: #003366;
-        }
+        .prices-button-container {
+    display: flex; /* Düyməni mərkəzləşdirmək üçün flex istifadə edirik */
+    justify-content: center; /* Üfüqi mərkəzləşdirmək */
+    margin-top: 30px; /* "Xidmətlər" hissəsindən məsafə */
+    margin-bottom: 20px; /* "Ehtiyatdan Xidmət" hissəsindən məsafə */
+}
 
-        /* Price styles */
-        .price {
-            color: #050953; /* Price color */
-            font-weight: bold; /* Qalın yazı */
-        }
+.prices-button {
+    padding: 15px;
+    background-color: #050953;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
 
-        @media (max-width: 600px) {
-            .service-list {
-                flex-direction: column;
-            }
-            .service-list li {
-                flex: 1 1 100%;
-            }
-            .contact-info {
-                flex-direction: column;
-            }
-        }
+.prices-button:hover {
+    transform: scale(1.05);
+    background-color: #003366;
+}
 
         .btn {
             display: inline-flex;
@@ -318,12 +303,13 @@
                     <div class="info">Məlumat almaq üçün toxun</div>
                 </li>
             </ul>
-            <!-- Price Button under Services section -->
-            <button class="prices-button" onclick="showPrices()">Qiymətlər</button>
-        </section>
+<!-- Price Button under Services section -->
+<div class="prices-button-container">
+    <button class="prices-button" onclick="showPrices()">Digər program haqqında məlumat</button>
+</div>
 
         <section class="support">
-            <h2>Uzaqdan Xidmət</h2>
+            <h2>Uzaqdan Xidmət üçün </h2>
             <div>
                 <button onclick="window.location.href='AnyDesk.exe';">
                     AnyDesk
@@ -419,15 +405,15 @@
                 <div id="prices-content" style="display: none;">
                     <h3>Qiymətlər:</h3>
                     <ul style="list-style-type: none;">
-                        <li><span class="price">Windows 7,8,10,11 - 30</span><strong>azn</strong> (Ancaq ofis programları daxildir)</li>
-                        <li><span class="price">Windows Server 2016,2019,2022,2025 - 200</span><strong>azn</strong> (Ancaq Domenin yaradılması daxildir)</li>
-                        <li><span class="price">Veam Backup 11 - 80</span><strong>azn</strong></li>
-                        <li><span class="price">Kerio Control - 100</span><strong>azn</strong></li>
-                        <li><span class="price">ESXi 6.0-7.0 - 300</span><strong>azn</strong></li>
-                        <li><span class="price">Antivirus (kaspersky) - 1PC - 30</span><strong>azn</strong></li>
-                        <li><span class="price">Autocad 2022,2024 - 30</span><strong>azn</strong></li>
-                        <li><span class="price">3DS Max - 80</span><strong>azn</strong> (Features daxildir - Corona, vray, XSMP, Floor generator, MultiTextura, Relink bitmaps, Sweep)</li>
-                        <li><span class="price">Ofiss programları 2016, 2019, 2024 - 20</span><strong>azn</strong> (Word, Excel, PowerPoint, Outlook)</li>
+                        <li>Windows 7,8,10,11 - <strong>Qiymət öyrənmək üçün müraciət edin.</strong> (Ancaq ofis proqramları daxildir)</li>
+                        <li>Windows Server 2016,2019,2022,2025 - <strong>Qiymət öyrənmək üçün müraciət edin.</strong> (Ancaq Domenin yaradılması daxildir)</li>
+                        <li>Veam Backup 11 - <strong>Qiymət öyrənmək üçün müraciət edin.</strong></li>
+                        <li>Kerio Control - <strong>Qiymət öyrənmək üçün müraciət edin.</strong></li>
+                        <li>ESXi 6.0-7.0 - <strong>Qiymət öyrənmək üçün müraciət edin.</strong></li>
+                        <li>Antivirus (Kaspersky) - 1PC - <strong>Qiymət öyrənmək üçün müraciət edin.</strong></li>
+                        <li>Autocad 2022,2024 - <strong>Qiymət öyrənmək üçün müraciət edin.</strong></li>
+                        <li>3DS Max - <strong>Qiymət öyrənmək üçün müraciət edin.</strong> (Features daxildir - Corona, Vray, XSMP, Floor generator, MultiTextura, Relink bitmaps, Sweep)</li>
+                        <li>Ofis proqramları 2016, 2019, 2024 - <strong>Qiymət öyrənmək üçün müraciət edin.</strong> (Word, Excel, PowerPoint, Outlook)</li>
                     </ul>
                 </div>
             </div>
